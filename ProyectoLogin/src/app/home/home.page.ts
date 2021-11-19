@@ -1,12 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  constructor() {}
+  usuario: string;
+  contrasena: string;
+  formularioEnviado = false;
 
+  constructor(private loadingController: LoadingController) {}
+
+  ngOnInit() { }
+
+  login() {
+    if(this.usuario && this.contrasena) {
+      console.log(this.usuario);
+      console.log(this.contrasena);
+    } else {
+      this.noData();
+    }
+  }
+
+  async noData() {
+    const loading = await this.loadingController.create({
+      cssClass: 'no-data-css',
+      message: '¡Ingrese datos válidos!',
+      duration: 2000,
+      spinner: null
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+  }
 }

@@ -1,0 +1,3 @@
+[submodule "login-api-ionic"]
+	path = login-api-ionic
+	url = https://github.com/sergio-asenjo/login-api-ionic

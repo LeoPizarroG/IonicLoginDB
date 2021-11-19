@@ -32,10 +32,10 @@ ion-footer {
     color: black;
     margin-bottom: 20%;
   }
-  
+
 }
 ion-icon {
-  
+
   border-left: 20px;
   font-size: 17px;
   color: 8c8c8c;
@@ -91,9 +91,9 @@ ion-content {
     padding-right: 35px;
     text-align: center;
   }
-  
 
-  
+
+
 }
 .ion-color-tercero {
   --ion-color-base: var(--ion-color-tercero);
@@ -102,4 +102,8 @@ ion-content {
   --ion-color-contrast-rgb: var(--ion-color-tercero-contrast-rgb);
   --ion-color-shade: var(--ion-color-tercero-shade);
   --ion-color-tint: var(--ion-color-tercero-tint);
+}
+
+.no-data-css {
+  background-color: aqua !important;
 }
