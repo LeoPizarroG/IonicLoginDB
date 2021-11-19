@@ -25,12 +25,28 @@
 #container a {
   text-decoration: none;
 }
-ion-input{
+ion-footer {
+  #footer{
+    --background: white;
+    font-size: 10px;
+    color: black;
+    margin-bottom: 20%;
+  }
+  
+}
+ion-icon {
+  
+  border-left: 20px;
+  font-size: 17px;
+  color: 8c8c8c;
+  padding-left: 20px;
+}
+ion-input {
   --background: white;
-  border-radius: 40px;
+  border-radius: 20px;
   font: 700;
-  color: #8c8c8c;
-  text-align: center;
+  color: #474448;
+  text-align: left;
 }
 ion-toolbar {
   --background: #b8b8ff;
@@ -51,16 +67,31 @@ ion-content {
     margin-bottom: 20%;
   }
 
+  h2{
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  h3{
+    font-size: 13px;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 15px;
+    text-align: center;
+  }
+  h5 {
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+  }
   form {
     margin-top: 20px;
     padding-left: 35px;
     padding-right: 35px;
     text-align: center;
   }
-  h2{
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
+  
 
   
 }
