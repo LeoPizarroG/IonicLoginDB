@@ -1,5 +1,8 @@
+import { ApiService } from './../services/api_service/api.service';
+import { DataService } from './../services/data_service/data.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,24 +10,30 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-
   usuario: string;
   contrasena: string;
   formularioEnviado = false;
+  listData = [];
 
-  constructor(private loadingController: LoadingController) {}
+  constructor(
+    private loadingController: LoadingController,
+    private dataService: DataService,
+    private router: Router,
+    private apiService: ApiService
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
+
+  ionViewDidEnter(){
+   this.healthCheck();
+  }
 
   login() {
-    if(this.usuario && this.contrasena) {
+    if (this.usuario && this.contrasena) {
       console.log(this.usuario);
       console.log(this.contrasena);
-      // const usuarioLogin = {
-      //   usuario : this.usuario,
-      //   contrasena: this.contrasena
-      // };
-      // this.storage.set('user', usuarioLogin);
+      this.addUsuario();
+      this.router.navigate(['principal']);
     } else {
       this.noData();
     }
@@ -35,10 +44,23 @@ export class HomePage implements OnInit {
       cssClass: 'no-data-css',
       message: '¡Ingrese datos válidos!',
       duration: 2000,
-      spinner: null
+      spinner: null,
     });
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
+  }
+
+  async addUsuario() {
+    await this.dataService.set('usuario', this.usuario);
+    await this.dataService.set('contrasena', this.contrasena);
+  }
+
+  healthCheck() {
+    this.apiService.getHome().subscribe((res) => {
+      console.log(res);
+    }, (err) => {
+      console.log(err);
+    });
   }
 }

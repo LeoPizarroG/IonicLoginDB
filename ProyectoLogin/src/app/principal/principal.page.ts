@@ -1,3 +1,4 @@
+import { DataService } from './../services/data_service/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalPage implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
 
+  ionViewDidEnter(){
+    this.getUsuario();
+  }
+
+  async getUsuario() {
+    const loggedUser = await this.dataService.get('usuario');
+    console.log(loggedUser);
+  }
 }
