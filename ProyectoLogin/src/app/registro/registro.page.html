@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div id="header">
-    <ion-img [src]="Sample_User_Icon.png"></ion-img>
+    <ion-img src="assets/img/Sample_User_Icon.png" style="width: 20%;"></ion-img>
     <h1>Registro</h1><ion-icon size="large"  name="keypad-outline"></ion-icon>
   </div>
 
@@ -20,7 +20,7 @@
       <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;
     </ion-input>
     <h5>Correo:</h5>
-    <ion-input placeholder="Introduzca su Email" type="password" required [(ngModel)]="contrasena" name="pass">
+    <ion-input placeholder="Introduzca su Email" type="email" required [(ngModel)]="email" name="pass">
       <ion-icon name="mail-outline"></ion-icon>&nbsp;
     </ion-input>
     <br>

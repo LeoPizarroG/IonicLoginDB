@@ -20,6 +20,11 @@ export class HomePage implements OnInit {
     if(this.usuario && this.contrasena) {
       console.log(this.usuario);
       console.log(this.contrasena);
+      // const usuarioLogin = {
+      //   usuario : this.usuario,
+      //   contrasena: this.contrasena
+      // };
+      // this.storage.set('user', usuarioLogin);
     } else {
       this.noData();
     }
