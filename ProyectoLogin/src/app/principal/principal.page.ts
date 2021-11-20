@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalPage implements OnInit {
 
+  usuario: string;
+  contrasena: string;
+  email: string;
+  id?: number;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -18,7 +23,10 @@ export class PrincipalPage implements OnInit {
   }
 
   async getUsuario() {
-    const loggedUser = await this.dataService.get('usuario');
-    console.log(loggedUser);
+    this.usuario = await this.dataService.get('usuario');
+    this.contrasena = await this.dataService.get('contrasena');
+    // TODO: Añadir resto de datos del usuario a storage local.
+    // this.email = await this.dataService.get('email');
+    // this.id = await this.dataService.get('id');
   }
 }

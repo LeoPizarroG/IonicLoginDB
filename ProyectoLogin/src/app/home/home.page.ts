@@ -1,8 +1,9 @@
-import { ApiService } from './../services/api_service/api.service';
-import { DataService } from './../services/data_service/data.service';
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
+
+import { ApiService } from './../services/api_service/api.service';
+import { DataService } from './../services/data_service/data.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,9 @@ export class HomePage implements OnInit {
   formularioEnviado = false;
   listData = [];
 
+  // TODO: Añadir botón para mantener sesión iniciada.
+  esGuardarSesion: boolean;
+
   constructor(
     private loadingController: LoadingController,
     private dataService: DataService,
@@ -26,6 +30,7 @@ export class HomePage implements OnInit {
 
   ionViewDidEnter(){
    this.healthCheck();
+   // Llamar mantenerSesionIniciada() aquí.
   }
 
   login() {
@@ -62,5 +67,11 @@ export class HomePage implements OnInit {
     }, (err) => {
       console.log(err);
     });
+  }
+
+  async mantenerSesionIniciada() {
+    // TODO: Añadir botón de mantener sesión iniciada en view.
+    //       Guardar estado en variable esGuardarSesion,
+    //       mantener dato en storage.
   }
 }

@@ -20,4 +20,16 @@ export class ApiService {
     return this.http.get(this.apiUrl, {headers:this.headers}).pipe();
   }
 
+  // crearUsuario(usuario: string, contrasena: string, correo: string): Observable<any> {
+  //   // const json = JSON.stringify(
+  //   // {
+  //   //   "nombre": usuario,
+  //   //   "password": contrasena,
+  //   //   "email": correo
+  //   // });
+
+  //   // const response = this.http.post(this.apiUrl, json, {headers:this.headers}).pipe();
+  //   // return response;
+  // }
+
 }
