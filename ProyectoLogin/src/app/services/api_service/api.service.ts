@@ -27,8 +27,17 @@ export class ApiService {
       email: `${correo}`
     };
 
-    const response = this.http.post(this.apiUrl, json, { headers: this.headers }).pipe();
+    const response = this.http.post(this.apiUrl + 'registro', json, { headers: this.headers }).pipe();
     return response;
+  }
+
+  loginUsuario(usuario: string, contrasena: string): Observable<any> {
+    const json = {
+      nombre: `${usuario}`,
+      password: `${contrasena}`,
+    };
+
+    return this.http.post(this.apiUrl + 'login', json, { headers: this.headers }).pipe();
   }
 
 }
