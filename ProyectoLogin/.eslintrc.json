@@ -1,11 +1,18 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
-        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "project": [
+          "tsconfig.json",
+          "e2e/tsconfig.json"
+        ],
         "createDefaultProgram": true
       },
       "extends": [
@@ -14,23 +21,33 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "no-underscore-dangle": [2, { "allow": ["_storage"] }],
         "@typescript-eslint/naming-convention": [
           "error",
           {
             "selector": "property",
-            "format": ["strictCamelCase"],
+            "format": [
+              "camelCase"
+            ],
             "filter": {
               // you can expand this regex to add more allowed names
               "regex": "^(Content-Type|Accept|Access-Control-Allow-Headers|Access-Control-Allow-Origin|Access-Control-Allow-Methods)$",
               "match": false
             }
+          },
+          {
+            "selector": ["classProperty"],
+            "modifiers": ["private"],
+            "format": ["camelCase"],
+            "leadingUnderscore": "require"
           }
         ],
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": ["Page", "Component"]
+            "suffixes": [
+              "Page",
+              "Component"
+            ]
           }
         ],
         "@angular-eslint/component-selector": [
@@ -47,13 +64,32 @@
             "type": "attribute",
             "prefix": "app",
             "style": "camelCase"
+          },
+          {
+            "@typescript-eslint/naming-convention": [
+              "error",
+              {
+                "selector": "memberLike",
+                "modifiers": [
+                  "private"
+                ],
+                "format": [
+                  "camelCase"
+                ],
+                "leadingUnderscore": "allow"
+              }
+            ]
           }
         ]
       }
     },
     {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
       "rules": {}
     }
   ]

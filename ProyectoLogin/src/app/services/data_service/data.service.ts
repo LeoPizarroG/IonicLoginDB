@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
-const STORAGE_KEY = 'arr';
-
 @Injectable({
   providedIn: 'root',
 })
