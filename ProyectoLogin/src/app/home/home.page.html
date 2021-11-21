@@ -14,13 +14,11 @@
     <ion-input placeholder="Introduzca su Usuario" required [(ngModel)]="usuario" name="user">
       <ion-icon name="person-circle-outline"></ion-icon>&nbsp;
     </ion-input>
-    <br>
     <h5>Contraseña:</h5>
     <ion-input placeholder="Introduce su Contraseña" type="password" required [(ngModel)]="contrasena" name="pass">
       <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;
     </ion-input>
     <h3>¿Olvidó su contraseña?</h3>
-    <br>
     <ion-button expand="block" shape="round" color="tercero" type="submit" (click)="login()">Login</ion-button>
     <h2>O</h2>
     <ion-button expand="block" shape="round" color="tercero" routerLink="/registro">Registrarse</ion-button>

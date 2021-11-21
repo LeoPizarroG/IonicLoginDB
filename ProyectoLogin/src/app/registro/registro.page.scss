@@ -1,3 +1,11 @@
+ion-img{
+  background: #f8f7ff;
+  border-radius: 60px;
+  border:solid black 5px;
+}
+ion-button{
+  font-weight: 600;
+}
 #container {
     text-align: center;
   
@@ -48,9 +56,10 @@
     --background: white;
     border-radius: 20px;
     font: 700;
-    font-size: 13px;
+    font-size: 11px;
     color: #474448;
     text-align: left;
+    border: solid #474448 0.5px;
 
   }
   ion-toolbar {
@@ -71,7 +80,6 @@
       align-items: center;
       color: #f8f7ff;
       margin-bottom: 10px;
-      padding-left: 20px;
     }
   
     h2{
@@ -101,6 +109,7 @@
       padding-bottom: 40px;
       text-align: center;
       background: #f8f7ff;
+      border-spacing: 10px;
       border-radius: 50px;
       padding-top: 20px;
     }
