@@ -1,12 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    
+    <ion-title>
+      Login
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div id="header">
-      <h1>Inicio de Sesión</h1>
+      
   </div>
 
   <form>
@@ -19,18 +21,14 @@
       <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;
     </ion-input>
     <h3>¿Olvidó su contraseña?</h3>
-    <ion-button expand="block" shape="round" color="tercero" type="submit" (click)="login()">Login</ion-button>
+    <ion-button expand="block" shape="round" color="color-botton" type="submit" (click)="login()">Login</ion-button>
     <h2>O</h2>
-    <ion-button expand="block" shape="round" color="tercero" routerLink="/registro">Registrarse</ion-button>
+    <ion-button expand="block" shape="round" color="color-botton" routerLink="/registro">Registrarse</ion-button>
   </form>
-
   <br>
-  <br>
-
   <ion-footer  class="ion-no-border">
     <ion-toolbar id="footer">
       <h4>Hecho con ❤️</h4>
     </ion-toolbar>
   </ion-footer>
-
 </ion-content>

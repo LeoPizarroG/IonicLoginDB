@@ -1,6 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="add"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registrarse
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,7 +13,6 @@
   <br>
   <div id="header">
     <ion-img src="assets/img/Sample_User_Icon.png" style="width: 30%;"></ion-img>
-    <h1>Registro</h1>
   </div>
 
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
@@ -56,17 +60,7 @@
     </div>
 
     <br>
-    <ion-button type="submit" expand="block" shape="round" color="tercero" routerLink="/registro">Registrarse</ion-button>
+    <ion-button type="submit" expand="block" shape="round" color="color-botton" routerLink="/registro">Registrarse</ion-button>
 
   </form>
-
-  <br>
-  <br>
-
-  <ion-footer  class="ion-no-border">
-    <ion-toolbar id="footer">
-      <h4>Hecho con ❤️</h4>
-    </ion-toolbar>
-  </ion-footer>
-
 </ion-content>
