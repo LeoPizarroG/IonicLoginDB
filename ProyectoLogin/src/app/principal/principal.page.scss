@@ -19,20 +19,23 @@ ion-img{
   }
 ion-content{
 
+    padding-top: 2px;
     padding-bottom: 2px;
     --background: linear-gradient(#64DFDF, #4EA8DE);
     #header{
+        margin-top: 20px;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
     }
     #datos{
+        margin-left: 5%;
         padding-top: 5px;
-        margin-left: 12px;
         border-radius: 5px;
         background: #f8f7ff;
-        width: 295px;
+        width: 285px;
         color: black;
         H2{
             padding-top: 2px;
