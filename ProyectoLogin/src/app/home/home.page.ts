@@ -15,9 +15,8 @@ export class HomePage implements OnInit {
   contrasena: string;
   formularioEnviado = false;
   listData = [];
-
-  // TODO: Añadir botón para mantener sesión iniciada.
-  esGuardarSesion: boolean;
+  uid: string;
+  esGuardarSesion = false;
 
   constructor(
     private loadingController: LoadingController,
@@ -26,19 +25,18 @@ export class HomePage implements OnInit {
     private apiService: ApiService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+   console.log(this.esGuardarSesion);
+  }
 
   ionViewDidEnter(){
    this.healthCheck();
-   // Llamar mantenerSesionIniciada() aquí.
+   this.mantenerSesionIniciada();
   }
 
   login() {
     if (this.usuario && this.contrasena) {
-      console.log(this.usuario);
-      console.log(this.contrasena);
-      this.addUsuario();
-      this.router.navigate(['principal']);
+      this.iniciarSesion();
     } else {
       this.noData();
     }
@@ -52,8 +50,6 @@ export class HomePage implements OnInit {
       spinner: null,
     });
     await loading.present();
-
-    const { role, data } = await loading.onDidDismiss();
   }
 
   async addUsuario() {
@@ -69,9 +65,33 @@ export class HomePage implements OnInit {
     });
   }
 
+  iniciarSesion() {
+    this.apiService.loginUsuario(this.usuario, this.contrasena).subscribe( (respuesta) => {
+      if(Object.keys(respuesta).length === 0) {
+        return this.noData();
+      }
+      else {
+        this.addUsuario();
+        this.router.navigate(['principal']);
+      }
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
   async mantenerSesionIniciada() {
-    // TODO: Añadir botón de mantener sesión iniciada en view.
-    //       Guardar estado en variable esGuardarSesion,
-    //       mantener dato en storage.
+    const mantener = await this.dataService.get('mantener');
+    const sesionIniciada = await this.dataService.get('sesionIniciada');
+    if (mantener === true && sesionIniciada === true) {
+      this.usuario = await this.dataService.get('usuario');
+      this.contrasena = await this.dataService.get('contrasena');
+      // DESCOMENTAR PARA HACER FUNCIONAR LA MANTENCIÓN DE INICIO DE SESIÓN.
+      // this.iniciarSesion();
+    }
+
+  }
+
+  change() {
+    this.dataService.set('mantener', this.esGuardarSesion);
   }
 }

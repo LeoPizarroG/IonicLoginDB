@@ -20,6 +20,7 @@ export class PrincipalPage implements OnInit {
 
   ionViewDidEnter(){
     this.getUsuario();
+    this.dataService.set('sesionIniciada', true);
   }
 
   async getUsuario() {

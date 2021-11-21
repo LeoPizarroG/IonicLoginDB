@@ -43,7 +43,7 @@ export class RegistroPage implements OnInit {
       this.contrasena = this.ionicForm.value.contrasena;
       this.email = this.ionicForm.value.email;
       this.crearUsuario(this.usuario, this.contrasena, this.email);
-      this.registroExitoso();
+      // this.registroExitoso();
 
     } else {
       console.log('¡Datos inválidos o no ingresados!');
@@ -58,15 +58,20 @@ export class RegistroPage implements OnInit {
   crearUsuario(usuario: string, contrasena: string, correo: string) {
     this.apiService.crearUsuario(usuario, contrasena, correo).subscribe((exitoso) => {
       console.log(exitoso);
+      if (exitoso.registro === '¡Registro exitoso!') {
+        this.registroExitoso('¡Registrado exitosamente!');
+      } else {
+        this.registroExitoso('¡El correo ya está en uso!');
+      }
     }, (error) => {
       console.log(error);
     });
   }
 
-  async registroExitoso() {
+  async registroExitoso(registro: string) {
     const loading = await this.loadingController.create({
       cssClass: 'no-data-css',
-      message: '¡Registrado Exitosamente!',
+      message: registro,
       spinner: null,
       duration: 3000
     });
@@ -74,7 +79,9 @@ export class RegistroPage implements OnInit {
 
     const { data } = await loading.onDidDismiss();
     if ( data == null ) {
-      this.router.navigate(['home']);
+      if(registro === '¡Registrado exitosamente!') {
+        this.router.navigate(['home']);
+      }
     }
   }
 }
