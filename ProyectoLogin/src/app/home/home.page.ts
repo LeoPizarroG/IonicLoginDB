@@ -26,27 +26,25 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-   console.log(this.esGuardarSesion);
   }
 
-  ionViewDidEnter(){
-   this.healthCheck();
-   // DESCOMENTAR ESTA LÍNEA PARA ACTIVAR FUNCIONALIDAD DE MANTENER SESIÓN.
-   this.mantenerSesionIniciada();
+  ionViewDidEnter() {
+    this.healthCheck();
+    this.mantenerSesionIniciada();
   }
 
   login() {
     if (this.usuario && this.contrasena) {
       this.iniciarSesion();
     } else {
-      this.noData();
+      this.noData('¡Ingrese datos válidos!');
     }
   }
 
-  async noData() {
+  async noData(mensaje: string) {
     const loading = await this.loadingController.create({
       cssClass: 'no-data-css',
-      message: '¡Ingrese datos válidos!',
+      message: mensaje,
       duration: 2000,
       spinner: null,
     });
@@ -69,13 +67,16 @@ export class HomePage implements OnInit {
   iniciarSesion() {
     this.apiService.loginUsuario(this.usuario, this.contrasena).subscribe( (respuesta) => {
       if(Object.keys(respuesta).length === 0) {
-        return this.noData();
+        return this.noData('¡Ingrese datos válidos!');
       }
       else {
-        this.addUsuario();
-        this.dataService.set('sesionIniciada', true);
         this.recuperarDatos();
-        this.router.navigate(['tab-general']);
+        this.addUsuario();
+        this.cargandoSesion();
+        setTimeout(() => {
+          this.dataService.set('sesionIniciada', true);
+          this.router.navigate(['tab-general']);
+        }, 2000);
       }
     }, (error) => {
       console.log(error);
@@ -111,5 +112,14 @@ export class HomePage implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  async cargandoSesion() {
+    const loading = await this.loadingController.create({
+      cssClass: 'no-data-css',
+      message: 'Iniciando Sesión…',
+      duration: 2000
+    });
+    await loading.present();
   }
 }

@@ -31,3 +31,18 @@
   font-weight: bold;
   color: white;
 }
+
+.cerrarSesion {
+  --background: white;
+}
+
+.alert-sub-title.sc-ion-alert-md, .alert-title.sc-ion-alert-md {
+  color: black;
+}
+.alert-sub-title.sc-ion-alert-ios, .alert-title.sc-ion-alert-ios {
+  color: black;
+}
+
+.cerrarSesion .close-session {
+  color: red;
+}

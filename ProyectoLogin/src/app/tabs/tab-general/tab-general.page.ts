@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data_service/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -9,23 +10,36 @@ import { AlertController } from '@ionic/angular';
 })
 export class TabGeneralPage implements OnInit {
 
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController, private dataService: DataService) { }
 
   ngOnInit() {
     this.router.navigate(['tab-general/perfil']);
   }
 
   cerrarSesion() {
-    this.presentAlertMultipleButtons();
+    this.presentAlertConfirm();
   }
 
-  async presentAlertMultipleButtons() {
+  async presentAlertConfirm() {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['Cancel', 'Open Modal', 'Delete']
+      cssClass: 'cerrarSesion',
+      header: '¿Desea Cerrar Sesión?',
+      buttons: [
+        {
+          text: 'Sí',
+          role: 'logout',
+          cssClass: 'close-session',
+          handler: (blah) => {
+            this.dataService.clear();
+            this.router.navigate(['home']);
+          }
+        }, {
+          text: 'No',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
     });
 
     await alert.present();

@@ -19,6 +19,7 @@ export class PerfilPage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.getUsuario();
   }
 
   async getUsuario() {
