@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab-general',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabGeneralPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
+    this.router.navigate(['tab-general/perfil']);
   }
 
+  cerrarSesion() {
+    this.presentAlertMultipleButtons();
+  }
+
+  async presentAlertMultipleButtons() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
+      buttons: ['Cancel', 'Open Modal', 'Delete']
+    });
+
+    await alert.present();
+  }
 }

@@ -26,7 +26,6 @@ export class ActualizarPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    this.recuperarDatos();
     this.getUsuario();
   }
 
@@ -35,22 +34,6 @@ export class ActualizarPage implements OnInit {
     this.contrasena = await this.dataService.get('contrasena');
     this.email = await this.dataService.get('email');
     this.id = await this.dataService.get('id');
-  }
-
-  recuperarDatos() {
-    this.apiService.obtenerDatosUsuario(this.usuario).subscribe(
-      (respuesta) => {
-        if ('id' in respuesta && 'email' in respuesta) {
-          this.dataService.set('email', respuesta.email);
-          this.dataService.set('id', respuesta.id);
-        } else {
-          console.log('¡Error!');
-        }
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   }
 
   actualizarDatos(usuario: string, email: string, contrasena: string) {

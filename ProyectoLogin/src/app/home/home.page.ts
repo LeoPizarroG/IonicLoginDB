@@ -53,9 +53,9 @@ export class HomePage implements OnInit {
     await loading.present();
   }
 
-  async addUsuario() {
-    await this.dataService.set('usuario', this.usuario);
-    await this.dataService.set('contrasena', this.contrasena);
+  addUsuario() {
+    this.dataService.set('usuario', this.usuario);
+    this.dataService.set('contrasena', this.contrasena);
   }
 
   healthCheck() {
@@ -74,6 +74,7 @@ export class HomePage implements OnInit {
       else {
         this.addUsuario();
         this.dataService.set('sesionIniciada', true);
+        this.recuperarDatos();
         this.router.navigate(['tab-general']);
       }
     }, (error) => {
@@ -94,5 +95,21 @@ export class HomePage implements OnInit {
 
   change() {
     this.dataService.set('mantener', this.esGuardarSesion);
+  }
+
+  recuperarDatos() {
+    this.apiService.obtenerDatosUsuario(this.usuario).subscribe(
+      (respuesta) => {
+        if ('id' in respuesta && 'email' in respuesta) {
+          this.dataService.set('email', respuesta.email);
+          this.dataService.set('id', respuesta.id);
+        } else {
+          console.log('¡Error!');
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

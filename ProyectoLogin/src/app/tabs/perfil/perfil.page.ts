@@ -1,3 +1,4 @@
+import { ApiService } from './../../services/api_service/api.service';
 import { DataService } from './../../services/data_service/data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,10 +12,13 @@ export class PerfilPage implements OnInit {
   nombre: string;
   correo: string;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private apiService: ApiService) { }
 
   ngOnInit() {
     this.getUsuario();
+  }
+
+  ionViewDidEnter(){
   }
 
   async getUsuario() {

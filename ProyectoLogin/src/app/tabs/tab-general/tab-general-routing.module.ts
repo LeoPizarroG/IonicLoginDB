@@ -18,10 +18,6 @@ const routes: Routes = [
       },
     ]
   },
-  {
-    path: 'tab-general',
-    redirectTo: 'tab-general/perfil'
-  }
 ];
 
 @NgModule({
