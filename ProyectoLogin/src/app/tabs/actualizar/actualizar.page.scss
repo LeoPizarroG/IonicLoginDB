@@ -4,8 +4,11 @@ ion-content{
   #header{
       margin-top: 20px;
       margin-bottom: 25px;
-      padding-left: 33%;
-      border-radius: 20%;  
+      margin-left: 100px;
+      margin-right: 100px;
+      width: 35%;
+      border-radius: 20%;
+      background-color: white; 
   }
   form{
       background: white;
@@ -21,6 +24,7 @@ ion-content{
     padding-top: 20px;
     padding-left: 28%;
     font-size: 18px;
+    justify-content: center;
   }
   ion-label{
       padding-top: 5px;
@@ -34,7 +38,6 @@ ion-content{
       color: #474448;
   }
   ion-button{
-      
       text-align: center;
   }
 }
@@ -51,7 +54,7 @@ ion-title{
 ion-img{
   background: white;
   border-radius: 60px;
-  width: 50%;
+  width: 10%;
 }
 
 .ion-color-color-botton {
