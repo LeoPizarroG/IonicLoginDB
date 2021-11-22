@@ -4,11 +4,7 @@ ion-content{
         margin-top: 30px;
         margin-bottom: 30px;
         padding-left: 33%;
-        border-radius: 20%;
-        ion-img{
-            border-radius: 50px;
-            width: 50%;
-        }
+        border-radius: 20%;  
     }
     form{
         background: white;
@@ -44,6 +40,11 @@ ion-title{
     font-size: 15px;
     text-align: center;
     color: black;
+}
+ion-img{
+    background: white;
+    border-radius: 60px;
+    width: 50%;
 }
 
 .ion-color-color-botton {

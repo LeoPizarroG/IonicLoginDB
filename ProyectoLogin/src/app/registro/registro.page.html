@@ -15,11 +15,8 @@
   </div>
 
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
-
-    <h5>Usuario:</h5>
-    <ion-input placeholder="Introduzca su Usuario" required type="text" formControlName="usuario">
-      <ion-icon name="person-circle-outline"></ion-icon>&nbsp;
-    </ion-input>
+    <ion-label position="stacked">Usuario:</ion-label>
+    <ion-input placeholder="Introduzca su Usuario" required type="text" formControlName="usuario"><ion-icon name="person-circle-outline"></ion-icon>&nbsp;</ion-input>
     <!-- Verificación si Usuario ingresó datos correctos. -->
     <div class="ion-text-center" id="span-error">
       <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.usuario.errors?.required">
@@ -29,25 +26,9 @@
         Ingrese entre 4 a 10 caracteres.
       </span>
     </div>
-
-    <h5>Contraseña:</h5>
-    <ion-input placeholder="Introduzca su Contraseña" type="password" required formControlName="contrasena">
-      <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;
-    </ion-input>
-    <!-- Verificación si Usuario ingresó datos correctos. -->
-    <div class="ion-text-center" id="span-error">
-      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.required">
-        Ingrese una contraseña.
-      </span>
-      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.minlength || errorControl.contrasena.errors?.maxlength">
-        Ingrese entre 8 a 16 caracteres.
-      </span>
-    </div>
-
-    <h5>Correo:</h5>
-    <ion-input placeholder="Introduzca su Email" type="email" required formControlName="email">
-      <ion-icon name="mail-outline"></ion-icon>&nbsp;
-    </ion-input>
+    <br>
+    <ion-label position="stacked">Correo:</ion-label>
+    <ion-input placeholder="Introduzca su Email" type="email" required formControlName="email"><ion-icon name="mail-outline"></ion-icon>&nbsp;</ion-input>
     <!-- Verificación si Usuario ingresó datos correctos. -->
     <div class="ion-text-center" id="span-error">
       <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.email.errors?.required">
@@ -57,9 +38,19 @@
         Ingrese correo institucional.
       </span>
     </div>
-
+    <br> 
+    <ion-label position="stacked">Nueva Contraseña:</ion-label>
+    <ion-input placeholder="Introduzca su Contraseña" type="password" required formControlName="contrasena"><ion-icon name="lock-closed-outline"></ion-icon>&nbsp;</ion-input>
+    <!-- Verificación si Usuario ingresó datos correctos. -->
+    <div class="ion-text-center" id="span-error">
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.required">
+        Ingrese una contraseña.
+      </span>
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.minlength || errorControl.contrasena.errors?.maxlength">
+        Ingrese entre 8 a 16 caracteres.
+      </span>
+    </div>
     <br>
     <ion-button type="submit" expand="block" shape="round" color="color-botton" routerLink="/registro">Registrarse</ion-button>
-
   </form>
 </ion-content>
