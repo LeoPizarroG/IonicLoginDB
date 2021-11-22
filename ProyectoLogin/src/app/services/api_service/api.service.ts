@@ -40,4 +40,29 @@ export class ApiService {
     return this.http.post(this.apiUrl + 'login', json, { headers: this.headers }).pipe();
   }
 
+  recuperarContrasena(usuario: string, correo: string, nuevaContrasena: string): Observable<any> {
+    const json = {
+      nombre: `${usuario}`,
+      password: `${nuevaContrasena}`,
+      email: `${correo}`
+    };
+
+    return this.http.patch(this.apiUrl + 'recuperar', json, { headers: this.headers }).pipe();
+  }
+
+  obtenerDatosUsuario(usuario: string): Observable<any> {
+    return this.http.get(this.apiUrl + `usuario/?usuario=${usuario}` , { headers: this.headers }).pipe();
+  }
+
+  actualizarDatosUsuario(id: number, usuario: string, contrasena: string, correo: string): Observable<any> {
+    const json = {
+      nombre: `${usuario}`,
+      password: `${contrasena}`,
+      email: `${correo}`
+    };
+
+    return this.http.put(this.apiUrl + `actualizar/${id}`, json, { headers: this.headers }).pipe();
+  }
+
+
 }
