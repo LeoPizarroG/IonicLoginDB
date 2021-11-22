@@ -1,8 +1,9 @@
 ion-content{
+
   --background: linear-gradient(#80FFDB, #56CFE1);
   #header{
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-bottom: 25px;
       padding-left: 33%;
       border-radius: 20%;  
   }
@@ -16,6 +17,11 @@ ion-content{
       padding-bottom: 20px;
       border-radius: 10px;
   }
+  #btn-eliminar{
+    padding-top: 20px;
+    padding-left: 28%;
+    font-size: 18px;
+  }
   ion-label{
       padding-top: 5px;
       padding-bottom: 5px;
@@ -28,6 +34,7 @@ ion-content{
       color: #474448;
   }
   ion-button{
+      
       text-align: center;
   }
 }
