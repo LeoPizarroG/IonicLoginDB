@@ -13,7 +13,7 @@ export class ActualizarPage implements OnInit {
   usuario: string;
   contrasena: string;
   email: string;
-  id?: number;
+  id: number;
 
   constructor(
     private dataService: DataService,
@@ -23,10 +23,10 @@ export class ActualizarPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.getUsuario();
   }
 
   ionViewDidEnter() {
-    this.getUsuario();
   }
 
   async getUsuario() {
@@ -61,5 +61,19 @@ export class ActualizarPage implements OnInit {
       duration: 3000,
     });
     await loading.present();
+  }
+
+  eliminarCuenta() {
+    this.apiService.borrarCuenta(this.id).subscribe( (respuesta) => {
+      if(respuesta['eliminacion'] === 'exitosa') {
+        this.resultadoCambio('¡Cuenta Eliminada!');
+        this.dataService.clear();
+        this.router.navigate(['home']);
+      } else {
+        this.resultadoCambio('¡Hubo un error!');
+      }
+    }, (error) => {
+      console.log(error);
+    });
   }
 }

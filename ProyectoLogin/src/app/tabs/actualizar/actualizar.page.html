@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content>
   <div id="header">
-    <img src="https://avatars.dicebear.com/api/avataaars/{{nombre}}.svg" />
+    <img src="https://avatars.dicebear.com/api/avataaars/{{ usuario }}.svg" />
   </div>
   <form action="">
     <ion-label position="stacked">Usuario:</ion-label>
@@ -34,5 +34,6 @@
     </ion-button>
   </form>
 
-  <ion-button id="btn-eliminar"color= "danger">Eliminar Perfil</ion-button>
+  <ion-button class="ios" id="btn-eliminar" color= "danger" (click)="eliminarCuenta()">Eliminar Perfil</ion-button>
+
 </ion-content>

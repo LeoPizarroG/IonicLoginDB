@@ -7,22 +7,63 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <div id="header">
     <ion-img src="assets/img/recuperar.png"></ion-img>
   </div>
-  <form action="">
+
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
 
     <ion-label position="stacked">Usuario:</ion-label>
-    <ion-input type="username" required placeholder="Usuario Actual"><ion-icon name="person-circle-outline"></ion-icon>&nbsp;</ion-input>
+    <ion-input type="text" required placeholder="Usuario Actual" formControlName="user">
+      <ion-icon name="person-circle-outline"></ion-icon>&nbsp;
+    </ion-input>
+    <!-- Verificación si Usuario ingresó datos correctos. -->
+    <div class="ion-text-center" id="span-error" *ngIf="esEnviadoFormulario">
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.user.errors?.required">
+        Ingrese un nombre de usuario.
+      </span>
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.user.errors?.minlength || errorControl.user.errors?.maxlength">
+        Ingrese entre 4 a 10 caracteres.
+      </span>
+    </div>
+
+
     <br>
+
     <ion-label position="stacked">Correo:</ion-label>
-    <ion-input type="email" required placeholder="Correo Actual" ><ion-icon name="mail-outline"></ion-icon>&nbsp;</ion-input>
-     <br> 
-    <ion-label position="stacked">Nueva Contraseña:</ion-label>
-    <ion-input type="password" required placeholder="Nueva Contraseña"><ion-icon name="lock-closed-outline"></ion-icon>&nbsp;</ion-input>
+    <ion-input type="email" required placeholder="Correo Actual" formControlName="email">
+      <ion-icon name="mail-outline"></ion-icon>&nbsp;
+    </ion-input>
+     <!-- Verificación si Usuario ingresó datos correctos. -->
+     <div class="ion-text-center">
+      <span id="span-error" class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.email.errors?.required">
+        Ingrese un correo.
+      </span>
+      <span id="span-error" class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.email.errors?.pattern">
+        Ingrese correo institucional.
+      </span>
+    </div>
     <br>
-    <ion-button expand="block" color="color-botton" >Recuperar Usuario</ion-button>
+
+
+    <br>
+    <ion-label position="stacked">Nueva Contraseña:</ion-label>
+    <ion-input type="password" required placeholder="Nueva Contraseña" formControlName="password">
+      <ion-icon name="lock-closed-outline"></ion-icon>&nbsp;
+    </ion-input>
+    <!-- Verificación si Usuario ingresó datos correctos. -->
+    <div class="ion-text-center" id="span-error">
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.password.errors?.required">
+        Ingrese una contraseña.
+      </span>
+      <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.password.errors?.minlength || errorControl.password.errors?.maxlength">
+        Ingrese entre 8 a 16 caracteres.
+      </span>
+    </div>
+
+    <br>
+    <ion-button type="submit" expand="block" color="color-botton">Recuperar Usuario</ion-button>
   </form>
-  
+
 </ion-content>

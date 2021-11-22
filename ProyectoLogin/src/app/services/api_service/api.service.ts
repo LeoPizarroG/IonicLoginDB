@@ -64,5 +64,9 @@ export class ApiService {
     return this.http.put(this.apiUrl + `actualizar/${id}`, json, { headers: this.headers }).pipe();
   }
 
+  borrarCuenta(id: number): Observable<any> {
+    return this.http.delete(this.apiUrl + `borrar/${id}` , { headers: this.headers }).pipe();
+  }
+
 
 }
