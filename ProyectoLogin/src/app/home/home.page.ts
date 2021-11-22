@@ -32,7 +32,7 @@ export class HomePage implements OnInit {
   ionViewDidEnter(){
    this.healthCheck();
    // DESCOMENTAR ESTA LÍNEA PARA ACTIVAR FUNCIONALIDAD DE MANTENER SESIÓN.
-   // this.mantenerSesionIniciada();
+   this.mantenerSesionIniciada();
   }
 
   login() {
@@ -73,10 +73,8 @@ export class HomePage implements OnInit {
       }
       else {
         this.addUsuario();
-        console.log("añade");
         this.dataService.set('sesionIniciada', true);
-        this.router.navigate(['principal']);
-        console.log("navega");
+        this.router.navigate(['tab-general']);
       }
     }, (error) => {
       console.log(error);
