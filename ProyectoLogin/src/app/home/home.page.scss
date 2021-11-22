@@ -1,137 +1,90 @@
-ion-img {
-  background: #f8f7ff;
-  border-radius: 60px;
-  border: solid black 5px;
-}
-ion-button {
-  font-weight: 600;
-}
-ion-footer {
-  #footer {
-    --background: white;
-    font-size: 10px;
-    color: black;
-    margin-bottom: 20%;
-    border-radius: 5px;
+ion-content{
+  h5{
+    color: #474448;
+    font-size: 15px;
+  }
+  h3{
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  h2{
+    color: #474448;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+  }
+  --background: linear-gradient(#80FFDB, #56CFE1);
+  #header{
+      margin-top: 20px;
+      margin-bottom: 25px;
+      margin-left: 100px;
+      margin-right: 100px;
+      width: 35%;
+      border-radius: 20%;
+      background-color: white; 
+  }
+  form{
+      background: white;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 10px;
+  }
+  #btn-eliminar{
+    padding-top: 20px;
+    padding-left: 28%;
+    font-size: 18px;
+    justify-content: center;
+  }
+  ion-label{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #474448;
+  }
+  ion-input{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-bottom: solid #474448;
+      color: #474448;
+  }
+  ion-button{
+      text-align: center;
   }
 }
-ion-icon {
-  #key {
-    font-size: 100px;
-  }
-  border-left: 20px;
-  font-size: 17px;
-  color: 8c8c8c;
-  padding-left: 20px;
+ion-footer{
+  text-align: center;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-ion-input {
+ion-toolbar{
+  align-items: center;
   --background: white;
-  font: 700;
-  font-size: 11px;
-  color: #474448;
-  text-align: left;
-  border-bottom: solid #474448 0.5px;
-}
-ion-toolbar {
-  --background: white;
+  --min-height:35px
 }
 ion-title{
-  color: black;
-  font-size: 13px;
+  font-size: 15px;
   text-align: center;
+  color: black;
 }
-ion-content {
+ion-img{
+  background: white;
+  border-radius: 60px;
+  width: 10%;
+}
 
-  h1 {
-    font-weight: 700;
-    font-size: 23px;
-    align-items: center;
-    color: #f8f7ff;
-    margin-bottom: 10px;
-  }
-
-  ion-toolbar {
-    --background: white;
-    #footer{
-      padding-top: 40px;
-    }
-  }
-    --background: linear-gradient(#80FFDB, #56CFE1);
-  
-    #header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    h1 {
-      font-weight: 700;
-      font-size: 23px;
-      align-items: center;
-      color: #f8f7ff;
-      margin-bottom: 10px;
-    }
-  
-    h2{
-      font-size: 15px;
-      font-weight: 700;
-      color: black;
-    }
-  
-    h3{
-      font-size: 13px;
-      font-weight: 700;
-      color: black;
-    }
-    h4 {
-      font-size: 15px;
-      text-align: center;
-    }
-    h5 {
-
-      font-size: 13px;
-      font-weight: 700;
-      text-align: left;
-      color: #474448;
-    }
-    form {
-      width: 89%;
-      margin-top: 30%;
-      margin-left: 17px;
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-bottom: 20px;
-      text-align: center;
-      background: white;
-      border-spacing: 10px;
-      border-radius: 5px;
-      padding-top: 20px;
-    }
-  
-  
-  
-  }
-  .ion-color-color-botton {
-    --ion-color-base: var(--ion-color-color-botton);
-    --ion-color-base-rgb: var(--ion-color-color-botton-rgb);
-    --ion-color-contrast: var(--ion-color-color-botton-contrast);
-    --ion-color-contrast-rgb: var(--ion-color-color-botton-contrast-rgb);
-    --ion-color-shade: var(--ion-color-color-botton-shade);
-    --ion-color-tint: var(--ion-color-color-botton-tint);
-  }
-  form {
-    margin-top: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-    background: #f8f7ff;
-    border-spacing: 10px;
-    border-radius: 50px;
-    padding-top: 20px;
-  }
-
-
+.ion-color-color-botton {
+  --ion-color-base: var(--ion-color-color-botton);
+  --ion-color-base-rgb: var(--ion-color-color-botton-rgb);
+  --ion-color-contrast: var(--ion-color-color-botton-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-color-botton-contrast-rgb);
+  --ion-color-shade: var(--ion-color-color-botton-shade);
+  --ion-color-tint: var(--ion-color-color-botton-tint);
+}
 
 
 .no-data-css {
