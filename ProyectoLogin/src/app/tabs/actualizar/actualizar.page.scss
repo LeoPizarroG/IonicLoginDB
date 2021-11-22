@@ -1,83 +1,50 @@
-ion-header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-ion-title{
-  font-size: 15px;
-  text-align: center;
-  color: black;
+ion-content{
+  --background: linear-gradient(#80FFDB, #56CFE1);
+  #header{
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding-left: 33%;
+      border-radius: 20%;  
+  }
+  form{
+      background: white;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 10px;
+  }
+  ion-label{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #474448;
+  }
+  ion-input{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-bottom: solid #474448;
+      color: #474448;
+  }
+  ion-button{
+      text-align: center;
+  }
 }
 ion-toolbar{
   align-items: center;
   --background: white;
   --min-height:35px
 }
+ion-title{
+  font-size: 15px;
+  text-align: center;
+  color: black;
+}
 ion-img{
-  background: #f8f7ff;
-  border-radius: 50px;
-}
-ion-content{
-
-  padding-top: 2px;
-  padding-bottom: 2px;
-  --background: linear-gradient(#64DFDF, #4EA8DE);
-  #header{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  #datos{
-      margin-left: 5%;
-      padding-top: 5px;
-      border-radius: 5px;
-      background: #f8f7ff;
-      width: 285px;
-      color: black;
-      H2{
-          padding-top: 2px;
-          text-align: left;
-          font-size: 14px;
-          padding-left: 20px;
-      }
-      ion-input{
-          border-bottom: solid #d3d3d3 1px;
-          text-align: center;
-      }
-      ion-label{
-          font-size: 12px;
-          padding-top: 4px;
-          padding-bottom: 4px;
-      }
-  }
-
-  H1{
-      text-align: center;
-  }
-  H2{
-      text-align: center;
-
-      padding-left: 10px;
-  }
-  form {
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-bottom: 40px;
-      border-radius: 50px;
-    }
-
-
-}
-ion-icon {
-  #key{
-      font-size: 100px;
-  }
-  border-left: 20px;
-  font-size: 17px;
-  color: 8c8c8c;
-  padding-left: 20px;
+  background: white;
+  border-radius: 60px;
+  width: 50%;
 }
 
 .ion-color-color-botton {
