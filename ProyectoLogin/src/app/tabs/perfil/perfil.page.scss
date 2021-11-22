@@ -1,0 +1,52 @@
+ion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ion-title {
+  font-size: 15px;
+  text-align: center;
+  color: black;
+}
+ion-toolbar {
+  align-items: center;
+  --background: white;
+  --min-height:35px
+}
+
+ion-content {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  --background: linear-gradient(#64DFDF, #4EA8DE);
+}
+
+ion-card {
+  background-color: white;
+}
+
+#cheader {
+  font-size: small;
+  color: #5f5f5f;
+}
+
+#ctitle {
+  color: rgb(0, 0, 0);
+  font-size: medium;
+  font-weight: bold;
+}
+
+#card {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+
+ion-grid {
+  height: 100%;
+}
+
+ion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

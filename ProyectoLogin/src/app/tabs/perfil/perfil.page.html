@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="add"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid fixed class="centered">
+  <ion-row>
+    <ion-col size="12">
+      <ion-card>
+        <ion-card id="card">
+          <img src="https://avatars.dicebear.com/api/avataaars/{{nombre}}.svg" />
+          <ion-card-header>
+            <ion-card-subtitle id="cheader">Nombre de Usuario</ion-card-subtitle>
+            <ion-card-title id="ctitle">{{ nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-header>
+            <ion-card-subtitle id="cheader">Correo Institucional</ion-card-subtitle>
+            <ion-card-title id="ctitle">{{ correo }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Lorem ipsum dolor sit amet…
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
