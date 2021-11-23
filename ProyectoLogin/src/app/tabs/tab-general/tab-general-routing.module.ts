@@ -13,8 +13,8 @@ const routes: Routes = [
         loadChildren: () => import('./../../tabs/perfil/perfil.module').then(m => m.PerfilPageModule)
       },
       {
-        path: 'actualizar',
-        loadChildren: () => import('./../../tabs/actualizar/actualizar.module').then(m => m.ActualizarPageModule)
+        path: 'actualizar-perfil',
+        loadChildren: () => import('./../../tabs/actualizar-perfil/actualizar-perfil.module').then( m => m.ActualizarPerfilPageModule)
       },
     ]
   },

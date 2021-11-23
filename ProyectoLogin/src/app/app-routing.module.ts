@@ -19,7 +19,6 @@ const routes: Routes = [
   {
     path: 'principal',
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule),
-    canLoad: [AuthGuard]
   },
   {
     path: 'recuperar',
@@ -27,9 +26,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./tabs/tab-general/tab-general.module').then( m => m.TabGeneralPageModule)
-  },
-
+    loadChildren: () => import('./tabs/tab-general/tab-general.module').then( m => m.TabGeneralPageModule),
+    canLoad: [AuthGuard]
+  }
 ];
 
 @NgModule({

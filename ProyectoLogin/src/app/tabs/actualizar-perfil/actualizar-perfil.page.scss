@@ -1,0 +1,45 @@
+ion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ion-title {
+  font-size: 15px;
+  text-align: center;
+  color: black;
+}
+ion-toolbar {
+  align-items: center;
+  --background: white;
+  --min-height:35px
+}
+
+ion-content {
+  --background: linear-gradient(#64DFDF, #4EA8DE);
+}
+
+.i-color {
+  --background: white;
+  --border-color: white;
+  --border-radius: 10px;
+}
+
+.ilabel {
+  font-weight: bold;
+}
+
+#header{
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 35%;
+  border-radius: 20%;
+  background-color: white;
+}
+
+#span-error{
+  padding-top: 5px;
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+}

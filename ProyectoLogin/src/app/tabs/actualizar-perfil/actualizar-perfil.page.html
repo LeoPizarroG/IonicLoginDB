@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="add"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Editar Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="header">
+    <img src="https://avatars.dicebear.com/api/avataaars/{{ usuario }}.svg" />
+  </div>
+
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="i-color">
+
+            <ion-label position="stacked" color="light" class="ilabel">Nombre de Usuario</ion-label>
+            <ion-input type="text" color="light" placeholder="usuario123" formControlName="usuario"></ion-input>
+            <!-- Verificación si Usuario ingresó datos correctos. -->
+            <div class="ion-text-center" id="span-error">
+              <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.usuario.errors?.required">
+                Ingrese un nombre de usuario.
+              </span>
+              <span class="error ion-padding"
+                *ngIf="esEnviadoFormulario && errorControl.usuario.errors?.minlength || errorControl.usuario.errors?.maxlength">
+                Ingrese entre 4 a 10 caracteres.
+              </span>
+            </div>
+
+            <ion-label position="stacked" color="light" class="ilabel">Correo Institucional</ion-label>
+            <ion-input type="email" color="light" placeholder="correo@duocuc.cl" formControlName="email"></ion-input>
+            <!-- Verificación si Usuario ingresó datos correctos. -->
+            <div class="ion-text-center" id="span-error">
+              <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.email.errors?.required">
+                Ingrese un correo.
+              </span>
+              <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.email.errors?.pattern">
+                Ingrese correo institucional.
+              </span>
+            </div>
+
+
+            <ion-label position="stacked" color="light" class="ilabel">Contraseña Nueva</ion-label>
+            <ion-input type="password" color="light" placeholder="••••••••" formControlName="contrasena"></ion-input>
+            <!-- Verificación si Usuario ingresó datos correctos. -->
+            <div class="ion-text-center" id="span-error">
+              <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.required">
+                Ingrese una contraseña.
+              </span>
+              <span class="error ion-padding"
+                *ngIf="esEnviadoFormulario && errorControl.contrasena.errors?.minlength || errorControl.contrasena.errors?.maxlength">
+                Ingrese entre 8 a 16 caracteres.
+              </span>
+            </div>
+
+            <ion-label position="stacked" color="light" class="ilabel">Confirmar Contraseña</ion-label>
+            <ion-input type="password" color="light" placeholder="••••••••" formControlName="confirmacion"></ion-input>
+            <!-- Verificación si Usuario ingresó datos correctos. -->
+            <div class="ion-text-center" id="span-error">
+              <span class="error ion-padding" *ngIf="esEnviadoFormulario && errorControl.confirmacion.errors?.required">
+                Ingrese una contraseña.
+              </span>
+              <span class="error ion-padding"
+                *ngIf="esEnviadoFormulario && errorControl.confirmacion.errors?.minlength || errorControl.confirmacion.errors?.maxlength">
+                Ingrese entre 8 a 16 caracteres.
+              </span>
+            </div>
+
+            <ion-grid fixed>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-button type="submit" expand="block" color="primary" fill="solid" shape="round">
+                    Actualizar Datos
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button (click)="eliminarCuenta()" expand="block" fill="solid" color="danger" shape="round">
+            Borrar Cuenta
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </form>
+
+</ion-content>
