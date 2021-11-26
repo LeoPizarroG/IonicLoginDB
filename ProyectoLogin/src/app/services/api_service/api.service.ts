@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   apiUrl = 'https://fastapi-ionic-login.herokuapp.com/';
+  // https://fastapi-ionic-login.herokuapp.com/docs para la documentación.
 
   headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
